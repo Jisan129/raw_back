@@ -27,7 +27,7 @@ index.post('/api/myendpoint', (req, res) => {
   // Get data from the request body
   const data = req.body;
   // Do something with the data
-  console.log(data.name);
+  console.log(data);
   const query = 'SELECT * FROM Persons';
   connection.query('INSERT INTO Persons SET ?',data ,(error, results) => {
     if (error) throw error;
@@ -35,7 +35,6 @@ index.post('/api/myendpoint', (req, res) => {
   });
   
   // Return a response
-  res.status(200).json({ message: 'Data received' });
 });
 index.get('/api/get_data', (req, res) => {
   const query = 'SELECT * FROM Persons';
